@@ -60,6 +60,6 @@ public class ConnectedComponentSearch extends DepthFirstSearch {
     
 	public int getComponentNum(){
 		start();
-    	return componentNum;
+    	return vertexComps.size();
 	}
 }
