@@ -10,6 +10,7 @@ package lab12;
  */
 public class OddCycle extends BreadthFirstSearch {
 	public OddCycle(Graph g) {
+            super(g);
 	}
 
 	public boolean hasOddCycle() {
