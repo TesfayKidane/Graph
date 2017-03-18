@@ -16,7 +16,7 @@ public class Main {
 		System.out.println(s);
 		System.out.println("Are B and C adjacent? "+g.areAdjacent(new Vertex("B"),new Vertex("C")));
 		System.out.println("Are A and C adjacent? "+g.areAdjacent(new Vertex("A"),new Vertex("C")));
-		System.out.println("Spanning Tree:");
+		System.out.println("Spanning Tree: .... ");
 		Graph t = g.getSpanningTree();
 		System.out.println(t);
 		System.out.println("Spanning Tree of the spanning tree:");
