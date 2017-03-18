@@ -31,7 +31,7 @@ public class OddCycle extends BreadthFirstSearch {
 			queue.enqueue(v);
 			List<Vertex> l = new ArrayList<>();
 			l.add(v);
-			vertexLevel.put(0, l);
+			vertexLevel.put(currentLevel, l);
 		}		
 	}
 	
@@ -67,8 +67,10 @@ public class OddCycle extends BreadthFirstSearch {
 		List<Vertex> listOfAdjacent = adjacencyList.get(v);
 		listOfAdjacent.forEach(u -> {
 			vs.forEach(w -> {
-				if(u.equals(w))
+				if(u.equals(w)) {
 					isOddCycle = true;
+                                        return;
+                                }
 			});
 		});
 	}
