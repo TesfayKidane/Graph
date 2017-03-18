@@ -11,11 +11,13 @@ public class ConnectedComponentSearch extends DepthFirstSearch {
     public ConnectedComponentSearch(Graph graph) {
         super(graph);
     }
-    List<Graph> computeConnnectedComponents(){
-		//implement here
-		return conGrap;
-	}
-	public int getComponentNum(){
-		return componentNum;
-	}
+
+    List<Graph> computeConnnectedComponents() {
+        //implement here
+        return conGrap;
+    }
+
+    public int getComponentNum() {
+        return componentNum;
+    }
 }

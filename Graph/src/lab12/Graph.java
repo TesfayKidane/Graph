@@ -158,15 +158,44 @@ public class Graph {
     }
 
     public boolean existsPathBetween(Vertex u, Vertex v) {
-        //implement
+        /*
+        Path. There is a path from u to v if and only if u and v 
+        belong to the same component. (Running time: O(1), once connected 
+        components are known.)        
+        */
+        for(Graph g : connectedComponents){
+            if(g.vertices.contains(u) && g.vertices.contains(u))
+                return true;
+        }
         return false;
     }
 
     public boolean containsCycle() {
-        //implement
+        /*
+        G has a cycle if and only if there is a connected component Ci of G such 
+        that the number ni of vertices of Ci satisfies mi ≠ ni –1, where mi is the
+        number of edges in Ci.
+        */
+        for(Graph g : connectedComponents){
+            int numVertices = g.vertices.size();
+            int numEdges = g.edges.size();
+            if(numEdges != numVertices - 1) // if this condition holds, then graph G has cycle
+                return true; 
+        }
         return false;
     }
-
+    
+    public boolean isTree(){
+        if(isConnected() && !containsCycle())
+            return true;
+        return false;
+    }
+    /*
+    G is bipartite iff G does not contain an odd cycle.
+    */
+    public boolean isBipartite(){       
+        return !(new OddCycle(this).hasOddCycle());
+    }
     public boolean areAdjacent(Vertex v, Vertex w) {
         LinkedList<Vertex> l = adjList.get(v);
         if (l == null) {
