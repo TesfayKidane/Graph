@@ -149,12 +149,8 @@ public class Graph {
     }
 
     public boolean isConnected() {
-        boolean isConn = false;
-        ConnectedComponentSearch conComp = new ConnectedComponentSearch(this);
-        if (conComp.getComponentNum() == 1) {
-            isConn = true;
-        }
-        return isConn;
+    	getConnectedComponents();
+        return connectedComponents.size() == 1;
     }
 
     public boolean existsPathBetween(Vertex u, Vertex v) {
